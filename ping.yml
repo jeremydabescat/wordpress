@@ -1,8 +1,8 @@
 ---
 
-  - name: pingmachine
-    hosts: wordpress
-    become: yes
-    tasks:
-      - name: ping_machine_cible
-        ping:
+- name: pingmachine
+  hosts: wordpress
+  become: yes
+  tasks:
+    - name: ping_machine_cible
+      ping:
