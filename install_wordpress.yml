@@ -40,7 +40,7 @@
         creates: /root/.my.cnf
     - name: Remove anonymous users
       mysql_user:
-      name: ""
+        name: ""
         state: absent
     - name: Remove test database
       mysql_db:
