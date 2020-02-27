@@ -42,13 +42,16 @@
       mysql_user:
         name: ""
         state: absent
+      when: mysql_new_root_pass.changed
     - name: Remove test database
       mysql_db:
         name: test
         state: absent
+      when: mysql_new_root_pass.changed
     - name: Output new root password
       debug:
         msg: "New root password is {{mysql_new_root_pass.stdout}}"
+      when: mysql_new_root_pass.changed
     - name: Update root password
       mysql_user:
         name: root
@@ -59,7 +62,9 @@
         - 127.0.0.1
         - ::1
         - localhost
+      when: mysql_new_root_pass.changed
     - name: Create my.cnf.j2
       template:
         src: templates/mysql/my.cnf.j2
         dest: /root/.my.cnf
+      when: mysql_new_root_pass.changed
