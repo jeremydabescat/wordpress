@@ -20,7 +20,7 @@
         - php
         - php-fpm
         - php-mysql
-        -php-xml
+        - php-xml
 
     - name: Remove apache2
       package:
