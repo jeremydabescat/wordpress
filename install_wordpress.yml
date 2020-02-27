@@ -55,7 +55,7 @@
       debug:
         msg: "New root password is {{mysql_new_root_pass.stdout}}"
       when: mysql_new_root_pass.changed
-      
+
     - name: Update root password
       mysql_user:
         name: root
@@ -83,6 +83,13 @@
       service:
         name: nginx
         state: started
+
+    - name: Check PHP version
+      command: php --version
+      register: php_version
+    - set_fact:
+        fpm_sock: /run/php/php7.{{ php_version.stdout.split(" ")[1].split(".")[1] }}-fpm.sock
+      when: ansible_distribution == 'Ubuntu'
 
     - name: Create nginx config
       template:
