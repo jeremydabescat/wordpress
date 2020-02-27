@@ -75,6 +75,13 @@
         dest: /root/.my.cnf
       when: mysql_new_root_pass.changed
 
+    - name: Create mysqld.cnf
+      template:
+        src: template/mysql/mysqld.cnf.j2
+        dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+      when: mysql_new_root_pass.changed
+      notify: restart mysql
+
     - name: Install nginx
       package:
         name: nginx
@@ -96,3 +103,9 @@
       template:
         src: template/nginx/default.j2
         dest: /etc/nginx/sites-available/default
+
+handlers:
+    - name: restart nginx
+      service:
+          name: nginx
+          state: restarted
