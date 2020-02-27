@@ -28,7 +28,7 @@
 #mysql
     - name: Install mysql
       package:
-        name: "{ item }"
+        name: "{{ item }}"
         state: present
       loop:
         - mysql-server
