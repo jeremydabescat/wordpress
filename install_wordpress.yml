@@ -1,0 +1,13 @@
+---
+
+- name: pingmachine
+  hosts: wordpress
+  become: yes
+  tasks:
+    - name: ping_machine_cible
+      ping:
+#php
+    - name: Add the orderj PHP PPA
+      apt_repository:
+        repo: 'ppa:ordrej/php'
+      ignore_errors: true
