@@ -63,7 +63,3 @@
       template:
         src: my.cnf.j2
         dest: /root/.my.cnf
-    - name: Create mysqld.cnf
-      template:
-        src: mysqld.cnf.j2
-        dest: /etc/mysql/mysql.conf.d/mysqld.cnf
