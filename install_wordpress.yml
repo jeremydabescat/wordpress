@@ -32,7 +32,7 @@
         state: present
       loop:
         - mysql-server
-        - python-mysql
+        - python-mysqldb
 
     - name: Generate new root password
       command: openssl rand -hex 7
