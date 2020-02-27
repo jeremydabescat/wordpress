@@ -11,3 +11,18 @@
       apt_repository:
         repo: 'ppa:ondrej/php'
       ignore_errors: true
+
+    - name: Install PHP
+      package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - php
+        - php-fpm
+        - php-mysql
+        -php-xml
+
+    - name: Remove apache2
+      package:
+        name: apache2
+        state: absent
