@@ -61,5 +61,5 @@
         - localhost
     - name: Create my.cnf.j2
       template:
-        src: my.cnf.j2
+        src: templates/mysql/my.cnf.j2
         dest: /root/.my.cnf
