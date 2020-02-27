@@ -7,7 +7,7 @@
     - name: ping_machine_cible
       ping:
 #php
-    - name: Add the orderj PHP PPA
+    - name: Add the ondrej PHP PPA
       apt_repository:
-        repo: 'ppa:ordrej/php'
+        repo: 'ppa:ondrej/php'
       ignore_errors: true
