@@ -25,3 +25,19 @@
       package:
         name: apache2
         state: absent
+#mysql
+    - name: Install mysql
+      package:
+        name: "{ item }"
+        state: present
+      loop:
+        - mysql-server
+        - python-mysql
+
+    - name: Generate new root password
+      command: openssl rand -hex 7
+      args:
+        creates: /root/.my.cnf
+      register: mysql_new_root_pass
+
+    - name: 
