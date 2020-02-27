@@ -104,7 +104,7 @@
         src: template/nginx/default.j2
         dest: /etc/nginx/sites-available/default
 
-handlers:
+  handlers:
     - name: restart nginx
       service:
           name: nginx
