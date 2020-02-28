@@ -40,15 +40,15 @@
         - mysql-server
         - python-mysqldb
 
-    - name: temporisation
-      pause:
-        minutes: 2
-
     - name: Generate new root password
       command: openssl rand -hex 7
       args:
         creates: /root/.my.cnf
       register: mysql_new_root_pass
+
+    - name: temporisation
+      pause:
+        minutes: 4
 
     - name: Remove anonymous users
       mysql_user:
