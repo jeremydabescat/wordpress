@@ -109,3 +109,9 @@
       service:
           name: nginx
           state: restarted
+
+  handlers:
+    - name: restart mysql
+      service:
+          name: mysql
+          state: restarted
