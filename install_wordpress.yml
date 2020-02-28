@@ -107,10 +107,10 @@
     # WordPress
     - name: Unzip WordPress
       unarchive:
-        src: files/wordpress.zip
+        src: files/wordpress-5.3.2-fr_FR.zip
         dest: /tmp
         creates: /tmp/wordpress/wp-settings.php
-        
+
     - name: Create project folder
       file:
         dest: /var/www/book.example.com
