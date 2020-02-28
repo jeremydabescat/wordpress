@@ -1,4 +1,4 @@
-jeremyserv ansible_host=192.168.223.3 ansible_user=devops
+jeremyserv ansible_host=192.168.223.4 ansible_user=devops
 
 [wordpress]
 jeremyserv
