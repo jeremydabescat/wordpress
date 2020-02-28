@@ -40,6 +40,10 @@
         - mysql-server
         - python-mysqldb
 
+    - name: temporisation
+      pause:
+        minutes: 2
+
     - name: Generate new root password
       command: openssl rand -hex 7
       args:
