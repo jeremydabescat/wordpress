@@ -151,7 +151,7 @@
 
     - name: Copy WordPress DB
       copy:
-        src: wordpress/wp-database.sql
+        src: template/wordpress/wp-database.sql
         dest: /tmp/wp-database.sql
       when: db_exist.rc > 0
 
