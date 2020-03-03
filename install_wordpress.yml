@@ -12,6 +12,12 @@
         name:
           - unzip
         state: present
+
+        - name: Install knupg
+          apt:
+            name:
+              - gnupg
+            state: present
 #php
     - name: Add the ondrej PHP PPA
       apt_repository:
